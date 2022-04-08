@@ -1,7 +1,14 @@
+from tokenize import Double
 from Voiture import Voiture
 class Programme:
     def __init__(self):
         self.tableVoitures=[]
+
+# add viecule: 
+
+    def remplir(self,*args)->None:
+        if len(self.tableVoitures)<5:
+            self.tableVoitures.extend(args)
 
 
 # methode qui permit d'afficher tous les voitures disponible aux tableaux
@@ -21,8 +28,9 @@ class Programme:
 
     def searchByMatricule(self)->None:
         condition = False
+        x=input('entrer le numero du matricul :')
         for voiture in self.tableVoitures:
-            if voiture.getMatricule()==int(input()):
+            if voiture.getMatricul()==int(x):
                 print(voiture)
                 condition= True
         if not condition:

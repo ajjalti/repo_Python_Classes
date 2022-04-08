@@ -1,10 +1,10 @@
 class Voiture:
     def __init__(
         self,
-        marque: str = None,
-        color: str = None,
-        matricul: int = None,
-        nbrcheveaux: int = None,
+        marque: str = "",
+        color: str = "",
+        matricul: int = 0,
+        nbrcheveaux: int = 0,
     ) -> None:
         self.__marque = marque
         self.__color = color
