@@ -19,14 +19,16 @@ class IR(ABC):
         salaireAnnuel = salaire * 12
         table = IR._tranches
         if min(table[0]) <= salaireAnnuel <= max(table[0]):
-            return f""" le taux est : {IR._tauxIR[0]} ‰"""
+            return IR._tauxIR[0]/100
         if min(table[1]) <= salaireAnnuel <= max(table[1]):
-            return f""" le taux est : {IR._tauxIR[1]} ‰"""
+            return IR._tauxIR[1]/100
         if min(table[2]) <= salaireAnnuel <= max(table[2]):
-            return f""" le taux est : {IR._tauxIR[2]} ‰"""
+            return IR._tauxIR[2]/100
         if min(table[3]) <= salaireAnnuel <= max(table[3]):
-            return f""" le taux est : {IR._tauxIR[3]} ‰"""
+            return IR._tauxIR[3]/100
         if min(table[4]) <= salaireAnnuel <= max(table[4]):
-            return f""" le taux est : {IR._tauxIR[4]} ‰"""
-        if min(table[5]) <= salaireAnnuel <= max(table[5]):
-            return f""" le taux est : {IR._tauxIR[5]} ‰"""
+            return IR._tauxIR[4]/100
+        if table[5] <= salaireAnnuel:
+            return IR._tauxIR[5]/100
+
+print(IR.getIR(3000))
